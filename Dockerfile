@@ -1,4 +1,4 @@
-FROM node:current-alpine
+FROM node:14-alpine
 
 ENV REVIEWDOG_VERSION=v0.11.0
 
@@ -7,7 +7,7 @@ RUN apk --update add jq git && \
     rm -rf /var/lib/apt/lists/* && \
     rm /var/cache/apk/*
 
-RUN apk add python2
+RUN apk --no-cache add build-base python2
 
 COPY entrypoint.sh /entrypoint.sh
 
