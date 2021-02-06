@@ -7,7 +7,7 @@ export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 cd "${GITHUB_WORKSPACE}/${INPUT_WORKDIR}" || exit 1
 
 if [ ! -f "$(npm bin)/stylelint" ]; then
-  npm install
+  npm install --legacy-peer-deps
 fi
 
 if [ -n "${INPUT_PACKAGES}" ]; then
